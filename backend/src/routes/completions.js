@@ -53,7 +53,7 @@ router.post('/:challengeId', authMiddleware, upload.single('photo'), async (req,
           aiScore: result.score ?? result.confidence,
           aiFeedback: result.feedback,
           aiDetails: JSON.stringify({ strengths: result.strengths, improvements: result.improvements }),
-          status: result.verified ? 'approved' : 'pending',
+          status: result.verified ? 'approved' : 'rejected',
         }
       })
 
