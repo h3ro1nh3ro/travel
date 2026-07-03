@@ -1,0 +1,15 @@
+{
+  "name": "KickOn — Skate & Compete",
+  "short_name": "KickOn",
+  "description": "Скейт-челленджи, AI-оценка трюков и онлайн S.K.A.T.E.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#FFE600",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/icon-512.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "categories": ["sports", "games"],
+  "screenshots": []
+}

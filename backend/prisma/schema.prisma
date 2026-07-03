@@ -1,0 +1,174 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id             Int          @id @default(autoincrement())
+  username       String       @unique
+  email          String?      @unique
+  password       String
+  role           String       @default("USER")
+  points         Int          @default(0)
+  level          String       @default("Новичок")
+  avatar         String?
+  bio            String?
+  streakCount    Int          @default(0)
+  lastActivityAt DateTime?
+  badges         String       @default("[]")
+  createdAt      DateTime     @default(now())
+
+  completions       Completion[]
+  pushSubscriptions PushSubscription[]
+  posts             Post[]
+  comments          Comment[]
+  postVotes         PostVote[]
+  commentVotes      CommentVote[]
+  feedReactions     FeedReaction[]
+}
+
+model City {
+  id             Int         @id @default(autoincrement())
+  name           String
+  description    String?
+  coverImage     String?
+  lat            Float
+  lng            Float
+  country        String      @default("Россия")
+  challengeCount Int         @default(0)
+  createdAt      DateTime    @default(now())
+
+  challenges     Challenge[]
+
+  @@unique([name])
+}
+
+model Challenge {
+  id           Int          @id @default(autoincrement())
+  cityId       Int
+  title        String
+  description  String
+  category     String       @default("История")
+  difficulty   String       @default("easy")
+  xp           Int          @default(50)
+  examplePhoto String?
+  hint         String?
+  lat          Float?
+  lng          Float?
+  radius       Int?
+  isActive     Boolean      @default(true)
+  createdAt    DateTime     @default(now())
+
+  city         City         @relation(fields: [cityId], references: [id])
+  completions  Completion[]
+
+  @@index([cityId, isActive])
+  @@index([category])
+}
+
+model Completion {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  challengeId Int
+  photoUrl    String
+  status      String   @default("pending")
+  moderNote   String?
+  aiVerified  Boolean?
+  aiScore     Float?
+  aiFeedback  String?
+  aiDetails   String?
+  createdAt   DateTime @default(now())
+
+  user        User      @relation(fields: [userId], references: [id])
+  challenge   Challenge @relation(fields: [challengeId], references: [id])
+
+  @@unique([userId, challengeId])
+  @@index([status, createdAt(sort: Desc)])
+  @@index([userId])
+}
+
+model Post {
+  id        Int       @id @default(autoincrement())
+  title     String
+  body      String
+  tag       String    @default("общее")
+  authorId  Int
+  upvotes   Int       @default(0)
+  downvotes Int       @default(0)
+  createdAt DateTime  @default(now())
+
+  author    User      @relation(fields: [authorId], references: [id])
+  comments  Comment[]
+  votes     PostVote[]
+  reactions FeedReaction[]
+}
+
+model Comment {
+  id        Int       @id @default(autoincrement())
+  body      String
+  postId    Int
+  authorId  Int
+  parentId  Int?
+  upvotes   Int       @default(0)
+  downvotes Int       @default(0)
+  createdAt DateTime  @default(now())
+
+  post      Post      @relation(fields: [postId], references: [id])
+  author    User      @relation(fields: [authorId], references: [id])
+  parent    Comment?  @relation("Replies", fields: [parentId], references: [id])
+  replies   Comment[] @relation("Replies")
+  votes     CommentVote[]
+}
+
+model PostVote {
+  id     Int  @id @default(autoincrement())
+  postId Int
+  userId Int
+  value  Int
+
+  post   Post @relation(fields: [postId], references: [id])
+  user   User @relation(fields: [userId], references: [id])
+
+  @@unique([postId, userId])
+}
+
+model CommentVote {
+  id        Int     @id @default(autoincrement())
+  commentId Int
+  userId    Int
+  value     Int
+
+  comment   Comment @relation(fields: [commentId], references: [id])
+  user      User    @relation(fields: [userId], references: [id])
+
+  @@unique([commentId, userId])
+}
+
+model FeedReaction {
+  id        Int      @id @default(autoincrement())
+  postId    Int
+  userId    Int
+  emoji     String
+  createdAt DateTime @default(now())
+
+  post      Post     @relation(fields: [postId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@unique([postId, userId])
+}
+
+model PushSubscription {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  endpoint  String   @unique
+  p256dh    String
+  auth      String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}

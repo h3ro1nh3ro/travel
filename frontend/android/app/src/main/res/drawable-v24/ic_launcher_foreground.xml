@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Deck (parallelogram, centered, compact) -->
+    <path
+        android:fillColor="#a8956e"
+        android:pathData="M24,44 L84,44 L82,56 L22,56 Z"/>
+
+    <!-- Left truck axle -->
+    <path
+        android:fillColor="#c4a882"
+        android:pathData="M30,56 L42,56 L42,60 L30,60 Z"/>
+
+    <!-- Right truck axle -->
+    <path
+        android:fillColor="#c4a882"
+        android:pathData="M66,56 L78,56 L78,60 L66,60 Z"/>
+
+    <!-- Left wheel -->
+    <path
+        android:fillColor="#a8956e"
+        android:pathData="M36,60 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0"/>
+
+    <!-- Left wheel hub -->
+    <path
+        android:fillColor="#111111"
+        android:pathData="M36,60 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"/>
+
+    <!-- Right wheel -->
+    <path
+        android:fillColor="#a8956e"
+        android:pathData="M72,60 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0"/>
+
+    <!-- Right wheel hub -->
+    <path
+        android:fillColor="#111111"
+        android:pathData="M72,60 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"/>
+
+    <!-- "KO" accent bar on deck -->
+    <path
+        android:fillColor="#111111"
+        android:fillAlpha="0.35"
+        android:pathData="M24,44 L84,44 L84,48 L24,48 Z"/>
+</vector>

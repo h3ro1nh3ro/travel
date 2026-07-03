@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e1820"/>
+      <stop offset="100%" stop-color="#1a2e3a"/>
+    </linearGradient>
+    <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#007a72"/>
+      <stop offset="100%" stop-color="#005a54"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="500" fill="url(#bg)"/>
+
+  <!-- Grid lines (map feel) -->
+  <line x1="0" y1="100" x2="900" y2="100" stroke="#1e3a50" stroke-width="0.5" opacity="0.5"/>
+  <line x1="0" y1="200" x2="900" y2="200" stroke="#1e3a50" stroke-width="0.5" opacity="0.5"/>
+  <line x1="0" y1="300" x2="900" y2="300" stroke="#1e3a50" stroke-width="0.5" opacity="0.5"/>
+  <line x1="0" y1="400" x2="900" y2="400" stroke="#1e3a50" stroke-width="0.5" opacity="0.5"/>
+  <line x1="150" y1="0" x2="150" y2="500" stroke="#1e3a50" stroke-width="0.5" opacity="0.5"/>
+  <line x1="300" y1="0" x2="300" y2="500" stroke="#1e3a50" stroke-width="0.5" opacity="0.5"/>
+  <line x1="450" y1="0" x2="450" y2="500" stroke="#1e3a50" stroke-width="0.5" opacity="0.5"/>
+  <line x1="600" y1="0" x2="600" y2="500" stroke="#1e3a50" stroke-width="0.5" opacity="0.5"/>
+  <line x1="750" y1="0" x2="750" y2="500" stroke="#1e3a50" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- Russia land mass - simplified but recognizable outline -->
+  <path d="
+    M 30,180
+    L 55,160 L 70,145 L 90,130 L 110,125 L 130,120
+    L 155,115 L 175,108 L 195,112 L 210,105
+    L 225,95  L 245,88  L 265,85  L 285,90
+    L 300,82  L 315,78  L 335,75  L 355,72
+    L 375,68  L 395,65  L 415,62  L 435,60
+    L 455,58  L 475,55  L 495,52  L 515,50
+    L 535,48  L 555,45  L 575,42  L 595,40
+    L 615,38  L 635,36  L 655,35  L 675,36
+    L 695,38  L 715,42  L 730,48  L 745,55
+    L 758,65  L 768,78  L 775,92  L 778,108
+    L 780,125 L 778,142 L 774,158 L 768,172
+    L 760,185 L 750,196 L 740,205 L 728,212
+    L 715,215 L 700,216 L 685,214 L 670,210
+    L 658,205 L 648,212 L 640,222 L 635,235
+    L 630,248 L 625,260 L 618,270 L 608,278
+    L 595,282 L 580,284 L 565,283 L 550,280
+    L 535,275 L 520,270 L 505,268 L 490,270
+    L 475,275 L 462,282 L 450,290 L 438,298
+    L 425,305 L 410,310 L 395,313 L 380,314
+    L 365,313 L 350,310 L 335,308 L 320,310
+    L 305,315 L 292,322 L 280,330 L 268,338
+    L 255,344 L 240,348 L 225,350 L 210,348
+    L 195,344 L 180,340 L 165,338 L 150,340
+    L 135,345 L 120,352 L 105,360 L 90,368
+    L 75,374  L 60,378  L 45,378  L 32,372
+    L 22,362  L 18,348  L 20,332  L 25,315
+    L 28,298  L 30,280  L 30,262  L 30,244
+    L 30,226  L 30,208  L 30,190
+    Z
+  " fill="url(#land)" opacity="0.85" stroke="#007a72" stroke-width="1.5"/>
+
+  <!-- Kamchatka peninsula -->
+  <path d="M 780,125 L 800,110 L 818,100 L 832,95 L 845,98 L 855,108 L 860,122 L 858,138 L 850,152 L 838,162 L 822,168 L 805,168 L 790,162 L 780,150 L 778,138 Z"
+    fill="url(#land)" opacity="0.8" stroke="#007a72" stroke-width="1"/>
+
+  <!-- Sakhalin -->
+  <path d="M 810,185 L 818,175 L 828,172 L 836,177 L 840,190 L 838,208 L 830,222 L 820,228 L 812,224 L 808,212 L 808,198 Z"
+    fill="url(#land)" opacity="0.75" stroke="#007a72" stroke-width="1"/>
+
+  <!-- Crimea hint -->
+  <ellipse cx="240" cy="360" rx="22" ry="12" fill="#007a72" opacity="0.6"/>
+
+  <!-- Glow effect on Russia border -->
+  <path d="
+    M 30,180 L 55,160 L 70,145 L 90,130 L 110,125 L 130,120
+    L 155,115 L 175,108 L 195,112 L 210,105
+    L 225,95  L 245,88  L 265,85  L 285,90
+    L 300,82  L 315,78  L 335,75  L 355,72
+    L 375,68  L 395,65  L 415,62  L 435,60
+    L 455,58  L 475,55  L 495,52  L 515,50
+    L 535,48  L 555,45  L 575,42  L 595,40
+    L 615,38  L 635,36  L 655,35  L 675,36
+    L 695,38  L 715,42  L 730,48  L 745,55
+    L 758,65  L 768,78  L 775,92  L 778,108
+  " fill="none" stroke="#6ecfc7" stroke-width="1.5" opacity="0.4" filter="url(#glow)"/>
+
+  <!-- City dots -->
+  <!-- Moscow -->
+  <circle cx="285" cy="230" r="7" fill="#007a72" stroke="#6ecfc7" stroke-width="1.5"/>
+  <circle cx="285" cy="230" r="3" fill="#6ecfc7" filter="url(#glow)"/>
+  <text x="295" y="226" font-family="monospace" font-size="10" fill="#6ecfc7" opacity="0.9">Москва</text>
+
+  <!-- SPb -->
+  <circle cx="210" cy="175" r="6" fill="#007a72" stroke="#6ecfc7" stroke-width="1.5"/>
+  <circle cx="210" cy="175" r="2.5" fill="#6ecfc7" filter="url(#glow)"/>
+  <text x="218" y="171" font-family="monospace" font-size="9" fill="#6ecfc7" opacity="0.9">СПб</text>
+
+  <!-- Kazan -->
+  <circle cx="345" cy="230" r="5" fill="#007a72" stroke="#6ecfc7" stroke-width="1"/>
+  <circle cx="345" cy="230" r="2" fill="#6ecfc7" filter="url(#glow)"/>
+  <text x="353" y="226" font-family="monospace" font-size="8" fill="#6ecfc7" opacity="0.8">Казань</text>
+
+  <!-- Novosibirsk -->
+  <circle cx="548" cy="215" r="5" fill="#007a72" stroke="#6ecfc7" stroke-width="1"/>
+  <circle cx="548" cy="215" r="2" fill="#6ecfc7" filter="url(#glow)"/>
+  <text x="556" y="211" font-family="monospace" font-size="8" fill="#6ecfc7" opacity="0.7">Новосибирск</text>
+
+  <!-- Vladivostok -->
+  <circle cx="730" cy="245" r="5" fill="#007a72" stroke="#6ecfc7" stroke-width="1"/>
+  <circle cx="730" cy="245" r="2" fill="#6ecfc7" filter="url(#glow)"/>
+
+  <!-- Yekaterinburg -->
+  <circle cx="430" cy="200" r="4" fill="#007a72" stroke="#6ecfc7" stroke-width="1" opacity="0.8"/>
+
+  <!-- Subtle terrain texture -->
+  <rect width="900" height="500" fill="#000" opacity="0.12"/>
+
+  <!-- Corner compass rose -->
+  <g transform="translate(840,440)">
+    <circle r="20" fill="#0e1820" stroke="#007a72" stroke-width="1" opacity="0.8"/>
+    <polygon points="0,-16 3,0 0,4 -3,0" fill="#6ecfc7" opacity="0.9"/>
+    <polygon points="0,16 3,0 0,-4 -3,0" fill="#3a5a60" opacity="0.6"/>
+    <polygon points="-16,0 0,3 4,0 0,-3" fill="#3a5a60" opacity="0.6"/>
+    <polygon points="16,0 0,3 -4,0 0,-3" fill="#3a5a60" opacity="0.6"/>
+    <text x="-3" y="-19" font-family="monospace" font-size="7" fill="#6ecfc7">N</text>
+  </g>
+</svg>

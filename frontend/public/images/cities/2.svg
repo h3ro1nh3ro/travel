@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1228"/>
+      <stop offset="50%" stop-color="#2d1a40"/>
+      <stop offset="100%" stop-color="#3d2255"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8b1a1a"/>
+      <stop offset="100%" stop-color="#5a0f0f"/>
+    </linearGradient>
+    <linearGradient id="tower" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c0392b"/>
+      <stop offset="100%" stop-color="#7a1010"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="bigglow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <!-- Night sky -->
+  <rect width="800" height="500" fill="url(#sky)"/>
+
+  <!-- Stars -->
+  <circle cx="80" cy="45" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="170" cy="28" r="1" fill="white" opacity="0.5"/>
+  <circle cx="320" cy="52" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="480" cy="22" r="1" fill="white" opacity="0.4"/>
+  <circle cx="600" cy="40" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="720" cy="18" r="1" fill="white" opacity="0.5"/>
+  <circle cx="750" cy="58" r="1" fill="white" opacity="0.4"/>
+  <circle cx="50" cy="80" r="1" fill="white" opacity="0.3"/>
+  <circle cx="260" cy="30" r="1" fill="white" opacity="0.5"/>
+
+  <!-- River Moscow glow -->
+  <rect x="0" y="340" width="800" height="160" fill="#0d1520"/>
+  <ellipse cx="400" cy="345" rx="400" ry="15" fill="#1a2840" opacity="0.8"/>
+  <!-- Water reflections -->
+  <rect x="180" y="355" width="6" height="60" fill="#ff4444" opacity="0.12"/>
+  <rect x="380" y="358" width="5" height="50" fill="#ff8800" opacity="0.08"/>
+  <rect x="580" y="355" width="5" height="55" fill="#ff4444" opacity="0.1"/>
+  <rect x="395" y="358" width="8" height="70" fill="#ffcc00" opacity="0.08"/>
+
+  <!-- Kremlin wall -->
+  <rect x="120" y="270" width="560" height="72" fill="url(#wall)"/>
+  <!-- Kremlin battlements -->
+  <rect x="120" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="148" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="176" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="204" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="232" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="260" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="288" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="316" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="344" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="372" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="400" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="428" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="456" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="484" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="512" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="540" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="568" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="596" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="624" y="258" width="14" height="16" fill="#8b1a1a"/>
+  <rect x="652" y="258" width="14" height="16" fill="#8b1a1a"/>
+
+  <!-- Spasskaya Tower (center, tallest) -->
+  <rect x="360" y="130" width="80" height="145" fill="url(#tower)"/>
+  <!-- Spasskaya upper section -->
+  <rect x="368" y="90" width="64" height="45" fill="#c0392b"/>
+  <!-- Spasskaya clock face -->
+  <circle cx="400" cy="112" r="20" fill="#1a1228" stroke="#ffcc00" stroke-width="2"/>
+  <circle cx="400" cy="112" r="16" fill="#0d0a18"/>
+  <line x1="400" y1="112" x2="400" y2="98" stroke="#ffcc00" stroke-width="2"/>
+  <line x1="400" y1="112" x2="410" y2="118" stroke="#ffcc00" stroke-width="1.5"/>
+  <!-- Spasskaya spire -->
+  <polygon points="400,25 385,92 415,92" fill="#c0392b"/>
+  <polygon points="400,20 397,30 403,30" fill="#e74c3c"/>
+  <!-- Ruby star -->
+  <polygon points="400,18 402,24 408,24 403,28 405,34 400,30 395,34 397,28 392,24 398,24" fill="#ff2200" filter="url(#glow)"/>
+
+  <!-- Nikolskaya Tower (left) -->
+  <rect x="160" y="175" width="55" height="90" fill="url(#tower)"/>
+  <polygon points="187,115 175,178 199,178" fill="#a93226"/>
+  <polygon points="187,110 185,120 189,120" fill="#c0392b"/>
+  <polygon points="187,108 189,114 192,114 190,118 191,122 187,119 183,122 184,118 182,114 185,114" fill="#ff2200" filter="url(#glow)"/>
+
+  <!-- Borovitskaya Tower (right) -->
+  <rect x="585" y="185" width="55" height="80" fill="url(#tower)"/>
+  <polygon points="612,128 600,188 624,188" fill="#a93226"/>
+  <polygon points="612,123 610,133 614,133" fill="#c0392b"/>
+  <polygon points="612,121 614,127 617,127 615,131 616,135 612,132 608,135 609,131 607,127 610,127" fill="#ff2200" filter="url(#glow)"/>
+
+  <!-- Cathedral of Vasily the Blessed (St. Basil's) - RIGHT side -->
+  <rect x="650" y="200" width="140" height="142" fill="#1a1228"/>
+  <!-- Central tower -->
+  <rect x="700" y="160" width="40" height="45" fill="#c0392b"/>
+  <path d="M720,95 C720,95 700,130 700,158 L740,158 C740,130 720,95 720,95Z" fill="#8b1a1a"/>
+  <circle cx="720" cy="93" r="6" fill="#ffcc00" filter="url(#glow)"/>
+  <!-- Side domes -->
+  <ellipse cx="665" cy="215" rx="22" ry="30" fill="#2ecc71" opacity="0.85"/>
+  <rect x="658" y="215" width="14" height="25" fill="#27ae60"/>
+  <ellipse cx="665" cy="215" rx="22" ry="30" fill="none" stroke="#f1c40f" stroke-width="1.5" opacity="0.7"/>
+  <ellipse cx="775" cy="215" rx="22" ry="30" fill="#e74c3c" opacity="0.85"/>
+  <rect x="768" y="215" width="14" height="25" fill="#c0392b"/>
+  <ellipse cx="775" cy="215" rx="22" ry="30" fill="none" stroke="#f1c40f" stroke-width="1.5" opacity="0.7"/>
+  <ellipse cx="700" cy="228" rx="18" ry="24" fill="#3498db" opacity="0.8"/>
+  <rect x="694" y="228" width="12" height="20" fill="#2980b9"/>
+  <ellipse cx="740" cy="228" rx="18" ry="24" fill="#e67e22" opacity="0.8"/>
+  <rect x="734" y="228" width="12" height="20" fill="#d35400"/>
+
+  <!-- Glow under star lights -->
+  <circle cx="400" cy="22" r="12" fill="#ff2200" opacity="0.25" filter="url(#bigglow)"/>
+  <circle cx="187" cy="112" r="8" fill="#ff2200" opacity="0.2" filter="url(#bigglow)"/>
+  <circle cx="612" cy="125" r="8" fill="#ff2200" opacity="0.2" filter="url(#bigglow)"/>
+
+  <!-- Dark overlay -->
+  <rect width="800" height="500" fill="#000" opacity="0.2"/>
+</svg>
