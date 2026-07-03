@@ -656,6 +656,8 @@ score — общая оценка выполнения: 90-100 идеально,
         ]
       }],
       max_tokens: 400,
+      // @ts-ignore — disable thinking tokens so response is fast
+      thinking: { budget_tokens: 0 },
     })
 
     const text = response.choices[0]?.message?.content ?? ''
