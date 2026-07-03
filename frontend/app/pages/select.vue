@@ -21,12 +21,9 @@
         class="group relative overflow-hidden text-left transition-all duration-200 active:scale-[0.98] w-full"
         style="height: 108px; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)"
       >
-        <!-- Cover / gradient -->
-        <div v-if="city.coverImage" class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-          :style="{ backgroundImage: `url(${city.coverImage})` }"
-        />
-        <div v-else class="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-          :style="{ background: cityGradient(city.id) }"
+        <!-- Cover -->
+        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+          :style="{ backgroundImage: `url(/images/cities/${city.id}.jpg)` }"
         />
         <!-- Gradient overlay -->
         <div class="absolute inset-0"

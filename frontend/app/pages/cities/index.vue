@@ -35,9 +35,7 @@
       >
         <!-- Cover image -->
         <div class="h-44 flex items-end relative overflow-hidden"
-          :style="city.coverImage
-            ? { backgroundImage: `url(${city.coverImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }
-            : { background: cityGradient(city.id) }"
+          :style="{ backgroundImage: `url(/images/cities/${city.id}.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }"
         >
           <!-- dark overlay for text readability -->
           <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)" />
